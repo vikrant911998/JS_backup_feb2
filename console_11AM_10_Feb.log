@@ -1,0 +1,371 @@
+var a = 10;
+undefined
+typeof(a);
+"number"
+typeof a;
+"number"
+typeof a
+"number"
+a
+10
+a = "Hello";
+"Hello"
+typeof a
+"string"
+var temp = true;
+undefined
+typeof temp;
+"boolean"
+var temp = false;
+undefined
+typeof typeof temp;
+"string"
+typeof( typeof(temp) );
+"string"
+typeof("boolean");
+"string"
+a
+"Hello"
+a = "Hello World";
+"Hello World"
+b = 'Hello World';
+"Hello World"
+b = `Hello World`;
+"Hello World"
+a
+"Hello World"
+a[0];
+"H"
+a[4];
+"o"
+a.charAt();
+"H"
+a.charAt(4);
+"o"
+typeof a.charAt(4);
+"string"
+a.charCodeAt();
+72
+a.charCodeAt(1);
+101
+a.includes();
+false
+a.includes('');
+true
+a.includes('l');
+true
+a.includes('llo World');
+true
+a.includes('lloWo');
+false
+a.concat();
+"Hello World"
+a.concat(' from JS');
+"Hello World from JS"
+a
+"Hello World"
+temp = a.concat(' from JS');
+"Hello World from JS"
+temp
+"Hello World from JS"
+a.indexOf();
+-1
+a.indexOf('l');
+2
+a.lastIndexOf('l');
+9
+a.length
+11
+a.slice();
+"Hello World"
+a.slice(2);
+"llo World"
+a.slice(2,9);
+"llo Wor"
+a.substr(2);
+"llo World"
+a.substr(2,3);
+"llo"
+a.substring(2);
+"llo World"
+a.substring(2,9);
+"llo Wor"
+a.split('');
+(11) ["H", "e", "l", "l", "o", " ", "W", "o", "r", "l", "d"]
+a.split(' ');
+(2) ["Hello", "World"]
+//reverse a string wordwise
+//I am Software Developer.
+//Developer Software am I.
+var str = "I am Software Developer";
+arr = str.split(' ');
+var reverse;
+
+for(var i=0;i<arr.length;i++){
+    reverse += arr[i];
+} 
+
+"undefinedIamSoftwareDeveloper"
+var temp3;
+undefined
+temp3
+undefined
+temp3 = "     Hello       ";
+"     Hello       "
+temp3;
+"     Hello       "
+temp3.trim();
+"Hello"
+for(var i=0; i<a.length ;i++){
+    console.log(a[i]);
+}
+VM3308:2 H
+VM3308:2 e
+VM3308:2 l
+VM3308:2 l
+VM3308:2 o
+VM3308:2  
+VM3308:2 W
+VM3308:2 o
+VM3308:2 r
+VM3308:2 l
+VM3308:2 d
+undefined
+for(var element of a){
+    console.log(element);
+}
+VM3485:2 H
+VM3485:2 e
+VM3485:2 l
+VM3485:2 l
+VM3485:2 o
+VM3485:2  
+VM3485:2 W
+VM3485:2 o
+VM3485:2 r
+VM3485:2 l
+VM3485:2 d
+undefined
+//reverse a string wordwise
+//I am Software Developer.
+//Developer Software am I.
+var str = "I am Software Developer";
+arr = str.split(' ');
+var reverse = '';
+
+for(var item of arr){
+    reverse += item+' ';
+}
+"I am Software Developer "
+//reverse a string wordwise
+//I am Software Developer.
+//Developer Software am I.
+var str = "I am Software Developer";
+arr = str.split(' ');
+var reverse = '';
+
+for(var i=arr.length-1 ; i>=0;i--){
+    reverse += arr[i]+' ';
+}
+"Developer Software am I "
+"23";
+"23"
+temp = "23";
+"23"
+temp+10;
+"2310"
+parseInt(temp);
+23
+parseInt(temp)+10;
+33
+temp = "23.45";
+"23.45"
+parseInt(temp)+10;
+33
+parseFloat(temp)+10;
+33.45
+10.toString();
+VM4352:1 Uncaught SyntaxError: Invalid or unexpected token
+var b = 10;
+undefined
+b.toString();
+"10"
+alert('This is an Alert-Box');
+undefined
+prompt('Enter a Number');
+"23"
+var temp = prompt('Enter a Value');
+
+console.log(temp+10);
+
+VM4757:3 2310
+undefined
+var temp = parseInt(prompt('Enter a Value'));
+
+console.log(temp+10);
+
+VM4799:3 33
+undefined
+function demo(){
+    console.log('Demo Function');
+}
+undefined
+function demo(str){
+    console.log('Demo Function');
+}
+undefined
+demo("Vikrant");
+VM4980:2 Demo Function
+undefined
+demo(12);
+VM4980:2 Demo Function
+undefined
+function demo(str){
+    console.log('Demo Function ',str);
+}
+undefined
+demo("Vikrant");
+VM5106:2 Demo Function  Vikrant
+undefined
+demo(12);
+VM5106:2 Demo Function  12
+undefined
+console.log('Hello ',12);
+VM5241:1 Hello  12
+undefined
+console.log('Hello '+12);
+VM5267:1 Hello 12
+undefined
+function format(str){     //vikrant->Vikrant
+    var formatted = str.charAt(); //V
+    
+    formatted += str.slice(1); //V+ikrant
+    console.log(formatted);
+}
+undefined
+format("vikrant");
+VM5601:5 vikrant
+undefined
+function format(str){     //vikrant->Vikrant
+    var formatted = str.charAt().toUpperCase(); //V
+    
+    formatted += str.slice(1); //V+ikrant
+    console.log(formatted);
+}
+undefined
+format("vikrant");
+VM5726:5 Vikrant
+undefined
+arr = [12,41,5,16,700,299,304];
+(7) [12, 41, 5, 16, 700, 299, 304]
+arr.push(100);
+8
+arr.length;
+8
+arr.pop();
+100
+arr.unshift(100);
+8
+arr
+(8) [100, 12, 41, 5, 16, 700, 299, 304]
+arr.shift();
+100
+arr
+(7) [12, 41, 5, 16, 700, 299, 304]
+for(var item of arr){
+    console.log(item);
+}
+VM6331:2 12
+VM6331:2 41
+VM6331:2 5
+VM6331:2 16
+VM6331:2 700
+VM6331:2 299
+VM6331:2 304
+undefined
+//object literal form
+var obj = {
+    name:"Vikrant",
+    age:23,
+    id:101
+};
+undefined
+obj
+{name: "Vikrant", age: 23, id: 101}
+typeof arr;
+"object"
+typeof obj;
+"object"
+obj.id
+101
+obj.name
+"Vikrant"
+obj['id'];
+101
+delete obj.id;
+true
+obj
+{name: "Vikrant", age: 23}
+delete obj.id;
+true
+obj.id = 101;
+101
+obj
+{name: "Vikrant", age: 23, id: 101}
+for(var key in obj){
+    console.log(key);
+}
+VM7134:2 name
+VM7134:2 age
+VM7134:2 id
+undefined
+for(var key in obj){
+    console.log(key+"  "+obj['key']);
+}
+VM7190:2 name  undefined
+VM7190:2 age  undefined
+VM7190:2 id  undefined
+undefined
+for(var key in obj){
+    console.log(key+"  "+obj.key);
+}
+VM7228:2 name  undefined
+VM7228:2 age  undefined
+VM7228:2 id  undefined
+undefined
+for(var key in obj){
+    console.log(key+"  "+obj[key]);
+}
+VM7254:2 name  Vikrant
+VM7254:2 age  23
+VM7254:2 id  101
+undefined
+for(var key in obj){
+    console.log(typeof key);
+}
+VM7355:2 string
+VM7355:2 string
+VM7355:2 string
+undefined
+if(true){
+    console.log('this is true condition');
+}
+VM7512:2 this is true condition
+undefined
+if(!true){
+    console.log('this is true condition');
+}
+undefined
+if(!true){
+    console.log('this is true condition');
+}
+else{
+    console.log('this is false condition');
+}
+VM7584:5 this is false condition
+undefined
+temp
+23
+temp > 20 ?console.log('TRUE'):console.log('FALSE');
+VM7796:1 TRUE
+undefined

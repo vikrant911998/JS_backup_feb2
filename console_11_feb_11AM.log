@@ -1,0 +1,542 @@
+var a = 10;
+undefined
+a
+10
+var d;
+undefined
+d
+undefined
+typeof(a);
+"number"
+typeof a;
+"number"
+typeof a
+"number"
+d = 23;
+23
+a+b;
+VM455:1 Uncaught ReferenceError: b is not defined
+    at <anonymous>:1:3
+(anonymous) @ VM455:1
+a+d;
+33
+typeof d
+"number"
+d = "Vikrant";
+"Vikrant"
+typeof d
+"string"
+d = true;
+true
+typeof d
+"boolean"
+a+d;
+11
+true+true
+2
+true+false
+1
+false
+false
+a = "23";
+"23"
+b = 10;
+10
+a+b;
+"2310"
+alert('This is Alert');
+undefined
+prompt('Enter a Number');
+"23"
+temp = prompt('Enter a Number');
+typeof temp;
+"string"
+parseInt("23");
+23
+parseInt("23") + parseInt("10");
+33
+parseInt("23.34") + parseInt("10.45");
+33
+parseFloat("23.34") + parseFloat("10.45");
+33.79
+num1 = 10;
+10
+var num1;
+num1 = 10;
+10
+var num2 = 20;
+undefined
+var num2;
+num2 = 20;
+20
+num1 = prompt('Enter First Number');
+num2 = prompt('Enter Second Number');
+num1+num2;
+"2320"
+num1 = parseInt(prompt('Enter First Number'));
+num2 = parseInt(prompt('Enter Second Number'));
+num1+num2;
+43
+23/0
+Infinity
+23+45-34*56
+-1836
+eval(23+45-34*56);
+-1836
+eval(23+45-/34*+56);
+VM2031:1 Uncaught SyntaxError: Invalid regular expression: missing /
+str = "Hello Computer";
+"Hello Computer"
+str.length
+14
+str.charAt();
+"H"
+typeof str.charAt();
+"string"
+a = 10;
+10
+typeof a;
+"number"
+typeof typeof a;
+"string"
+typeof( typeof(a) );
+"string"
+typeof( "number" );
+"string"
+str.charAt();
+"H"
+str.charAt(3);
+"l"
+str.charAt(7);
+"o"
+str
+"Hello Computer"
+str.charAt(9);
+"p"
+str.charCodeAt();
+72
+"#".charCodeAt();
+35
+"#".charCodeAt(0);
+35
+"#".charCodeAt(1);
+NaN
+str.charCodeAt(23);
+NaN
+str.includes();
+false
+str.includes('');
+true
+str.includes(' ');
+true
+str.includes(' ',6);
+false
+str.includes('',6);
+true
+str.includes('o',6);
+true
+str.includes('omput',6);
+true
+str.includes('ompu3t');
+false
+str.indexOf();
+-1
+str.indexOf('o');
+4
+str
+"Hello Computer"
+str.lastIndexOf('o');
+7
+str.indexOf('o C');
+4
+str.toUpperCase();
+"HELLO COMPUTER"
+str.toLowerCase();
+"hello computer"
+//vikrant -> Vikrant
+undefined
+str.slice();
+"Hello Computer"
+str.slice(2);
+"llo Computer"
+str.slice(2,9);
+"llo Com"
+str.substr(2);
+"llo Computer"
+str.substr(2,7);
+"llo Com"
+str.substring(2);
+"llo Computer"
+str.substring(2,9);
+"llo Com"
+a
+10
+a.toString();
+"10"
+true.toString();
+"true"
+str = "      Hello Computer     ";
+"      Hello Computer     "
+str
+"      Hello Computer     "
+str.trim();
+"Hello Computer"
+str.trimLeft();
+"Hello Computer     "
+str.trimRight();
+"      Hello Computer"
+str.trimStart();
+"Hello Computer     "
+str.trimEnd();
+"      Hello Computer"
+str
+"      Hello Computer     "
+temp = str.trimEnd();
+"      Hello Computer"
+str
+"      Hello Computer     "
+temp
+"      Hello Computer"
+str.concat('From Concat.');
+"      Hello Computer     From Concat."
+str
+"      Hello Computer     "
+temp = str.concat('From Concat.');
+"      Hello Computer     From Concat."
+temp
+"      Hello Computer     From Concat."
+console.log('Inside Print');
+VM4948:1 Inside Print
+undefined
+console.log(23);
+VM4979:1 23
+undefined
+console.log(true);
+VM5013:1 true
+undefined
+console.log(true,23,"vikrant");
+VM5060:1 true 23 "vikrant"
+undefined
+for( var i=0; i<str.length ; i++ ){
+    console.log(str[i]);
+}
+VM5250:2  
+VM5250:2  
+VM5250:2  
+VM5250:2  
+VM5250:2  
+VM5250:2  
+VM5250:2 H
+VM5250:2 e
+VM5250:2 l
+VM5250:2 l
+VM5250:2 o
+VM5250:2  
+VM5250:2 C
+VM5250:2 o
+VM5250:2 m
+VM5250:2 p
+VM5250:2 u
+VM5250:2 t
+VM5250:2 e
+VM5250:2 r
+VM5250:2  
+VM5250:2  
+VM5250:2  
+VM5250:2  
+VM5250:2  
+undefined
+//for-of Loop
+for( var temp of str ){
+    console.log(temp);
+}
+VM5429:3  
+VM5429:3  
+VM5429:3  
+VM5429:3  
+VM5429:3  
+VM5429:3  
+VM5429:3 H
+VM5429:3 e
+VM5429:3 l
+VM5429:3 l
+VM5429:3 o
+VM5429:3  
+VM5429:3 C
+VM5429:3 o
+VM5429:3 m
+VM5429:3 p
+VM5429:3 u
+VM5429:3 t
+VM5429:3 e
+VM5429:3 r
+VM5429:3  
+VM5429:3  
+VM5429:3  
+VM5429:3  
+VM5429:3  
+undefined
+arr = [];
+[]
+arr = [];
+[]
+typeof arr;
+"object"
+arr = [23,54,124,true,'hello'];
+(5) [23, 54, 124, true, "hello"]
+arr.push(2000);
+6
+arr
+(6) [23, 54, 124, true, "hello", 2000]
+arr.push(300,100,900);
+9
+arr
+(9) [23, 54, 124, true, "hello", 2000, 300, 100, 900]
+arr.unshift(true);
+10
+arr
+(10) [true, 23, 54, 124, true, "hello", 2000, 300, 100, 900]
+arr.unshift(1100,false);
+12
+arr
+(12) [1100, false, true, 23, 54, 124, true, "hello", 2000, 300, 100, 900]
+arr.pop();
+900
+arr
+(11) [1100, false, true, 23, 54, 124, true, "hello", 2000, 300, 100]
+arr.shift();
+1100
+arr
+(10) [false, true, 23, 54, 124, true, "hello", 2000, 300, 100]
+for( var i=0; i<arr.length ; i++){
+    console.log(arr[i]);
+}
+VM6494:2 false
+VM6494:2 true
+VM6494:2 23
+VM6494:2 54
+VM6494:2 124
+VM6494:2 true
+VM6494:2 hello
+VM6494:2 2000
+VM6494:2 300
+VM6494:2 100
+undefined
+for(var item of arr){
+    console.log(item);
+}
+VM6587:2 false
+VM6587:2 true
+VM6587:2 23
+VM6587:2 54
+VM6587:2 124
+VM6587:2 true
+VM6587:2 hello
+VM6587:2 2000
+VM6587:2 300
+VM6587:2 100
+undefined
+//object literal form
+var userObject = {
+    profileId:'kljf289454ksdf8g9dfj0',
+    name:'Vikrant',
+    userName:'Vicky47400',
+    password:'1234'
+};
+undefined
+typeof userObject;
+"object"
+Object
+ƒ Object() { [native code] }
+userObject
+{profileId: "kljf289454ksdf8g9dfj0", name: "Vikrant", userName: "Vicky47400", password: "1234"}profileId: "kljf289454ksdf8g9dfj0"name: "Vikrant"userName: "Vicky47400"password: "1234"__proto__: Object
+userObject.followers_length = 102;
+102
+userObject
+{profileId: "kljf289454ksdf8g9dfj0", name: "Vikrant", userName: "Vicky47400", password: "1234", followers_length: 102}
+delete userObject.name;
+true
+userObject
+{profileId: "kljf289454ksdf8g9dfj0", userName: "Vicky47400", password: "1234", followers_length: 102}
+userObject.password = "123456";
+"123456"
+userObject
+{profileId: "kljf289454ksdf8g9dfj0", userName: "Vicky47400", password: "123456", followers_length: 102}
+for(var item in userObject){
+    console.log(item);
+}
+VM7477:2 profileId
+VM7477:2 userName
+VM7477:2 password
+VM7477:2 followers_length
+undefined
+userObject.followers_length
+102
+userObject['password'];
+"123456"
+for(var key in userObject){
+    console.log(key,userObject.key);
+}
+VM7740:2 profileId undefined
+VM7740:2 userName undefined
+VM7740:2 password undefined
+VM7740:2 followers_length undefined
+undefined
+for(var key in userObject){
+    console.log(key,userObject['key']);
+}
+VM7784:2 profileId undefined
+VM7784:2 userName undefined
+VM7784:2 password undefined
+VM7784:2 followers_length undefined
+undefined
+for(var key in userObject){
+    console.log(key,userObject[key]);
+}
+VM7810:2 profileId kljf289454ksdf8g9dfj0
+VM7810:2 userName Vicky47400
+VM7810:2 password 123456
+VM7810:2 followers_length 102
+undefined
+for(var key in userObject){
+    console.log(typeof key);
+}
+VM7880:2 string
+VM7880:2 string
+VM7880:2 string
+VM7880:2 string
+undefined
+if(true){
+    console.log('Inside If Condition');
+}
+else{
+    console.log('Inside else Condition');
+}
+VM8105:2 Inside If Condition
+undefined
+if(!true){
+    console.log('Inside If Condition');
+}
+else{
+    console.log('Inside else Condition');
+}
+VM8118:5 Inside else Condition
+undefined
+if(0){
+    console.log('Inside If Condition');
+}
+else{
+    console.log('Inside else Condition');
+}
+VM8146:5 Inside else Condition
+undefined
+if(10){
+    console.log('Inside If Condition');
+}
+else{
+    console.log('Inside else Condition');
+}
+VM8161:2 Inside If Condition
+undefined
+if(str){
+    console.log('Inside If Condition');
+}
+else{
+    console.log('Inside else Condition');
+}
+VM8188:2 Inside If Condition
+undefined
+undefined
+undefined
+undefined+10;
+NaN
+undefined+undefined;
+NaN
+NaN
+NaN
+isNaN();
+true
+isNaN(23);
+false
+isNaN(23+'hello');
+true
+isFinite(23);
+true
+isFinite(23/0);
+false
+isFinite(23+'');
+true
+//function types
+//Closure
+//function passing as an argument
+//function definition inside another function
+//return array or object of function.
+undefined
+//FUNCTION TYPES
+undefined
+//function declaration style
+function demo(){
+    console.log('Inside Demo Function');
+}
+undefined
+demo();
+VM9298:3 Inside Demo Function
+undefined
+//function Expression style or Anonymous Style
+var demo = function(){
+    console.log('Inside Demo Function');
+}
+undefined
+demo();
+VM9431:3 Inside Demo Function
+undefined
+//function Expression style or Anonymous Style
+var demo = function(){
+    console.log('Inside Demo Function Anonymous');
+}
+undefined
+demo();
+VM9489:3 Inside Demo Function Anonymous
+undefined
+demo = 12;
+12
+//function Expression style or Anonymous Style
+var demo = function(){
+    console.log('Inside Demo Function Anonymous');
+}
+undefined
+demo();
+VM9570:3 Inside Demo Function Anonymous
+undefined
+demo = 12;
+12
+demo();
+VM9635:1 Uncaught TypeError: demo is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM9635:1
+//function Expression style or Anonymous Style
+var demo = function(){
+    console.log('Inside Demo Function Anonymous');
+}
+undefined
+//Arrow Function
+var demo = ()=>console.log('Arrow Function');
+
+undefined
+demo();
+VM9789:2 Arrow Function
+undefined
+//Arrow Function
+var add = (a,b)=>a+b;
+
+undefined
+add(2,3);
+5
+//Arrow Function
+var add = (a,b)=>{
+    return a+b;
+}
+
+undefined
+add(2,3);
+5
