@@ -1,0 +1,502 @@
+//function arguments and n arguments
+function add(a,b){
+    console.log(a+b);
+}
+undefined
+add(2,3);
+VM818:3 5
+undefined
+add();
+VM818:3 NaN
+undefined
+add(1);
+VM818:3 NaN
+undefined
+add(1,2,3,4,5);
+VM818:3 3
+undefined
+console.dir(add);
+VM1033:1 ƒ add(a,b)length: 2name: "add"arguments: nullcaller: nullprototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM818:2[[Scopes]]: Scopes[1]
+undefined
+//function arguments and n arguments
+function add(a,b){
+    console.log(arguments);
+}
+undefined
+add();
+VM1184:3 Arguments [callee: ƒ, Symbol(Symbol.iterator): ƒ]length: 0callee: ƒ add(a,b)Symbol(Symbol.iterator): ƒ values()__proto__: Object
+undefined
+add(2);
+VM1184:3 Arguments [2, callee: ƒ, Symbol(Symbol.iterator): ƒ]0: 2length: 1callee: ƒ add(a,b)Symbol(Symbol.iterator): ƒ values()__proto__: Object
+undefined
+arr = [];
+[]
+arr instanceof Array;
+true
+//function arguments and n arguments
+function add(a,b){
+    console.log(arguments instanceof Array);
+}
+undefined
+add();
+VM1416:3 false
+undefined
+//function arguments and n arguments
+function add(a,b){
+    console.log(arguments);
+}
+undefined
+add();
+VM1488:3 Arguments [callee: ƒ, Symbol(Symbol.iterator): ƒ]
+undefined
+add(1);
+VM1488:3 Arguments [1, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+undefined
+add(1,23,41,51,true);
+VM1488:3 Arguments(5) [1, 23, 41, 51, true, callee: ƒ, Symbol(Symbol.iterator): ƒ]0: 11: 232: 413: 514: truelength: 5callee: ƒ add(a,b)Symbol(Symbol.iterator): ƒ values()__proto__: Object
+undefined
+//function arguments and n arguments
+function add(a,b){
+    for(var item of arguments){
+        console.log(item);
+    }
+}
+undefined
+add();
+undefined
+add(1);
+VM1713:4 1
+undefined
+add(1);
+VM1713:4 1
+undefined
+add(1,23,41,true,'Hello');
+VM1713:4 1
+VM1713:4 23
+VM1713:4 41
+VM1713:4 true
+VM1713:4 Hello
+undefined
+function add(){
+    var sum = 0;
+    for(var item of arguments){
+        sum = sum + item;
+    }
+    console.log('SUM = ',sum);
+}
+undefined
+add(12,31,14,15);
+VM2009:6 SUM =  72
+undefined
+//rest parameter
+function add(a,b,c,...n){
+    console.log(a,b,c,n);
+}
+undefined
+add(1,2);
+VM2440:3 1 2 undefined []
+undefined
+add(1,2,3,45,61,63,true);
+VM2440:3 1 2 3 (4) [45, 61, 63, true]0: 451: 612: 633: truelength: 4__proto__: Array(0)
+undefined
+//rest parameter
+function add(a,b,c,...n){
+    console.log(a,b,c);
+    for(var item of n){
+        console.log(item);
+    }
+}
+undefined
+add(1,2,3,45,61,63,true);
+VM2663:3 1 2 3
+VM2663:5 45
+VM2663:5 61
+VM2663:5 63
+VM2663:5 true
+undefined
+//function definition inside another function
+function demo(){
+    console.log('Inside Demo Function...');
+}
+undefined
+demo();
+VM2962:3 Inside Demo Function...
+undefined
+//function definition inside another function
+function demo(){
+    console.log('Inside Demo Function...');
+    
+    function insideDemo(){
+        console.log('Inside Inner Demo Function');
+    }
+    
+}
+undefined
+demo();
+VM3095:3 Inside Demo Function...
+undefined
+//function definition inside another function
+function demo(){
+    console.log('Inside Demo Function...');
+    
+    function insideDemo(){
+        console.log('Inside Inner Demo Function');
+    }
+    insideDemo();
+    
+}
+undefined
+demo();
+VM3161:3 Inside Demo Function...
+VM3161:6 Inside Inner Demo Function
+undefined
+//function definition inside another function
+function demo(){
+    console.log('Inside Demo Function...');
+    
+    function insideDemo(){
+        console.log('Inside Inner Demo Function');
+    }
+    
+    
+}
+undefined
+demo.insideDemo();
+VM3255:1 Uncaught TypeError: demo.insideDemo is not a function
+    at <anonymous>:1:6
+(anonymous) @ VM3255:1
+demo().insideDemo();
+VM3208:3 Inside Demo Function...
+VM3272:1 Uncaught TypeError: Cannot read property 'insideDemo' of undefined
+    at <anonymous>:1:7
+(anonymous) @ VM3272:1
+//function definition inside another function
+function demo(){
+    console.log('Inside Demo Function...');
+    
+    function insideDemo(){
+        console.log('Inside Inner Demo Function');
+    }
+    
+    return insideDemo;
+}
+undefined
+temp = demo();
+VM3329:3 Inside Demo Function...
+ƒ insideDemo(){
+        console.log('Inside Inner Demo Function');
+    }
+temp
+ƒ insideDemo(){
+        console.log('Inside Inner Demo Function');
+    }
+temp();
+VM3329:6 Inside Inner Demo Function
+undefined
+temp();
+VM3329:6 Inside Inner Demo Function
+undefined
+//function definition inside another function
+function Calc(){
+    function add(a,b){
+        console.log(a+b);
+    }
+    function sub(a,b){
+        console.log(a-b);
+    }
+}
+undefined
+//function definition inside another function
+function Calc(){
+    function add(a,b){
+        console.log(a+b);
+    }
+    function sub(a,b){
+        console.log(a-b);
+    }
+
+    return [add,sub];
+}
+undefined
+temp = demo();
+VM3329:3 Inside Demo Function...
+ƒ insideDemo(){
+        console.log('Inside Inner Demo Function');
+    }
+temp = Calc();
+(2) [ƒ, ƒ]
+temp
+(2) [ƒ, ƒ]0: ƒ add(a,b)1: ƒ sub(a,b)length: 2name: "sub"arguments: nullcaller: nullprototype: {constructor: ƒ}__proto__: ƒ ()arguments: (...)caller: (...)length: 0name: ""constructor: ƒ Function()apply: ƒ apply()bind: ƒ bind()call: ƒ call()toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: Object[[FunctionLocation]]: <unknown>[[Scopes]]: Scopes[0][[FunctionLocation]]: VM3721:6[[Scopes]]: Scopes[1]length: 2__proto__: Array(0)
+temp[0];
+ƒ add(a,b){
+        console.log(a+b);
+    }
+temp[0](12,3);
+VM3721:4 15
+undefined
+temp[1](12,3);
+VM3721:7 9
+undefined
+//function definition inside another function
+function Calc(){
+    function add(a,b){
+        console.log(a+b);
+    }
+    function sub(a,b){
+        console.log(a-b);
+    }
+
+    return {addition:add,subtraction:sub};
+}
+undefined
+temp = Calc();
+{addition: ƒ, subtraction: ƒ}
+temp.addition(23,1);
+VM3961:4 24
+undefined
+//function definition inside another function
+function Calc(){
+    function add(a,b){
+        console.log(a+b);
+    }
+    function subtract(a,b){
+        console.log(a-b);
+    }
+
+    return {add,subtract};
+}
+undefined
+temp = Calc();
+{add: ƒ, subtract: ƒ}add: ƒ add(a,b)subtract: ƒ subtract(a,b)__proto__: Object
+temp.add(23,1);
+VM4224:4 24
+undefined
+temp.subtract(23,1);
+VM4224:7 22
+undefined
+//function definition inside another function
+function Calc(){
+    
+    return {
+            add:function(a,b){
+                console.log(a+b);
+            },
+            subtract:function(a,b){
+                console.log(a-b);
+            }
+        };
+}
+undefined
+temp = Calc();
+{add: ƒ, subtract: ƒ}add: ƒ (a,b)length: 2name: "add"arguments: nullcaller: nullprototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM4604:5[[Scopes]]: Scopes[1]subtract: ƒ (a,b)__proto__: Object
+temp.add
+ƒ (a,b){
+                console.log(a+b);
+            }
+//function definition inside another function
+function Calc(){
+    
+    return 
+    {
+            add:function(a,b){
+                console.log(a+b);
+            },
+            subtract:function(a,b){
+                console.log(a-b);
+            }
+    };
+}
+VM4741:6 Uncaught SyntaxError: Function statements require a function name
+//function definition inside another function
+function Calc(){
+    var obj = {
+            add:function(a,b){
+                console.log(a+b);
+            },
+            subtract:function(a,b){
+                console.log(a-b);
+            }
+    };
+
+    return 
+    obj;    
+}
+undefined
+temp1 = Calc();
+undefined
+temp1
+undefined
+//function definition inside another function
+function Calc(){
+    var obj = {
+            add:function(a,b){
+                console.log(a+b);
+            },
+            subtract:function(a,b){
+                console.log(a-b);
+            }
+    };
+
+    return 
+    obj;    
+    console.log('after return');
+}
+undefined
+temp1 = Calc();
+undefined
+temp1
+undefined
+//function as an arguments
+function print(){
+    console.log('Print Function Called');
+}
+
+function caller(fn){
+    fn();
+}
+undefined
+caller(print);
+VM5376:3 Print Function Called
+undefined
+function square(num){
+    console.log(num**2);
+}
+
+function loop(fn){
+    for(var i=1;i<5;i++){
+        fn(i);
+    }
+}
+undefined
+loop(sqaure);
+VM5889:1 Uncaught ReferenceError: sqaure is not defined
+    at <anonymous>:1:6
+(anonymous) @ VM5889:1
+loop(square);
+VM5754:2 1
+VM5754:2 4
+VM5754:2 9
+VM5754:2 16
+undefined
+function check(num){
+    num >100? return "Greater": return "Smaller";
+}
+
+function square(fn,num){
+    var result = num**2;
+    fn(result);
+}
+
+function loop(fn1,fn2){
+    for(var i=1;i<5;i++){
+        fn1(fn2,i);
+    }
+}
+
+loop(square, check);
+VM6599:2 Uncaught SyntaxError: Unexpected token 'return'
+function check(num){
+    num >100?"Greater":"Smaller";
+}
+
+function square(fn,num){
+    var result = num**2;
+    fn(result);
+}
+
+function loop(fn1,fn2){
+    for(var i=1;i<5;i++){
+        fn1(fn2,i);
+    }
+}
+
+loop(square, check);
+undefined
+function check(num){
+    num >100?console.log("Greater"):console;
+}
+
+function square(fn,num){
+    var result = num**2;
+    fn(result);
+}
+
+function loop(fn1,fn2){
+    for(var i=1;i<5;i++){
+        fn1(fn2,i);
+    }
+}
+
+loop(square, check);
+undefined
+function check(num){
+    num >100?console.log("Greater"):console.log("Smaller");
+
+}
+
+function square(fn,num){
+    var result = num**2;
+    fn(result);
+}
+
+function loop(fn1,fn2){
+    for(var i=1;i<5;i++){
+        fn1(fn2,i);
+    }
+}
+
+loop(square, check);
+VM6813:2 Smaller
+VM6813:2 Smaller
+VM6813:2 Smaller
+VM6813:2 Smaller
+undefined
+//spread Operator(...)
+a1 = [1,2,3,4,5];
+a2 = [5,6,7,8,9];
+a3 = [a1,a2];
+
+(2) [Array(5), Array(5)]0: (5) [1, 2, 3, 4, 5]0: 11: 22: 33: 44: 5length: 5__proto__: Array(0)1: (5) [5, 6, 7, 8, 9]length: 2__proto__: Array(0)
+//spread Operator(...)
+a1 = [1,2,3,4,5];
+a2 = [5,6,7,8,9];
+a3 = [...a1,...a2];
+
+(10) [1, 2, 3, 4, 5, 5, 6, 7, 8, 9]
+a3
+(10) [1, 2, 3, 4, 5, 5, 6, 7, 8, 9]
+//spread Operator(...)
+a1 = [1,2,3,4,5];
+a2 = [5,6,7,8,9];
+a3 = [...a1,...a2,true,false];
+
+(12) [1, 2, 3, 4, 5, 5, 6, 7, 8, 9, true, false]
+a3
+(12) [1, 2, 3, 4, 5, 5, 6, 7, 8, 9, true, false]
+obj = {
+    id:101,
+    name:'Vikrant'
+};
+{id: 101, name: "Vikrant"}
+obj1 = {
+    id:1012,
+    name:'Rahul'
+};
+{id: 1012, name: "Rahul"}
+obj
+{id: 101, name: "Vikrant"}
+obj1
+{id: 1012, name: "Rahul"}
+obj1 = {
+    sid:1012,
+    nickname:'Rahul'
+};
+{sid: 1012, nickname: "Rahul"}
+obj1
+{sid: 1012, nickname: "Rahul"}
+obj
+{id: 101, name: "Vikrant"}
+obj2 = {obj,obj1};
+{obj: {…}, obj1: {…}}obj: {id: 101, name: "Vikrant"}obj1: {sid: 1012, nickname: "Rahul"}__proto__: Object
+obj2 = {...obj,...obj1};
+{id: 101, name: "Vikrant", sid: 1012, nickname: "Rahul"}
