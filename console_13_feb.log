@@ -1,0 +1,511 @@
+function add(a){
+    console.log(a);
+}
+undefined
+add(23);
+VM208:2 23
+undefined
+add('String');
+VM208:2 String
+undefined
+add({id:1010});
+VM208:2 {id: 1010}
+undefined
+function print(){
+    console.log('Print Function Called...');
+}
+undefined
+function add(function_param){
+    function_param();
+    console.log('add function finished');
+}
+undefined
+add(print);
+VM404:2 Print Function Called...
+VM598:3 add function finished
+undefined
+arr = [213,14,51,6,7,23,91,60];
+(8) [213, 14, 51, 6, 7, 23, 91, 60]
+for(var item of arr){
+    console.log(item);
+}
+VM846:2 213
+VM846:2 14
+VM846:2 51
+VM846:2 6
+VM846:2 7
+VM846:2 23
+VM846:2 91
+VM846:2 60
+undefined
+function print(num){
+    console.log(num);
+}
+undefined
+arr.forEach(print);
+VM986:2 213
+VM986:2 14
+VM986:2 51
+VM986:2 6
+VM986:2 7
+VM986:2 23
+VM986:2 91
+VM986:2 60
+undefined
+arr.forEach( function(element){
+    console.log(element);
+} );
+VM1296:2 213
+VM1296:2 14
+VM1296:2 51
+VM1296:2 6
+VM1296:2 7
+VM1296:2 23
+VM1296:2 91
+VM1296:2 60
+undefined
+arr.forEach( (element)=>{
+    console.log(element);
+} );
+VM1344:2 213
+VM1344:2 14
+VM1344:2 51
+VM1344:2 6
+VM1344:2 7
+VM1344:2 23
+VM1344:2 91
+VM1344:2 60
+undefined
+arr.forEach( element=>{
+    console.log(element);
+} );
+VM1369:2 213
+VM1369:2 14
+VM1369:2 51
+VM1369:2 6
+VM1369:2 7
+VM1369:2 23
+VM1369:2 91
+VM1369:2 60
+undefined
+arr.forEach( element=>console.log(element) );
+VM1495:1 213
+VM1495:1 14
+VM1495:1 51
+VM1495:1 6
+VM1495:1 7
+VM1495:1 23
+VM1495:1 91
+VM1495:1 60
+undefined
+arr.find( function(element){
+    return element == 91;
+} );
+91
+arr.find( function(element){
+    return element == 100;
+} );
+undefined
+function findvalue(num){
+    arr.find(function(ele){
+        return ele == num;
+    });
+}
+undefined
+console.log( findvalue(100) );
+VM2159:1 undefined
+undefined
+console.log( findvalue(91) );
+VM2180:1 undefined
+undefined
+function findvalue(num){
+    return arr.find(function(ele){
+        return ele == num;
+    });
+}
+undefined
+console.log( findvalue(91) );
+VM2237:1 91
+undefined
+console.log( findvalue(100) );
+VM2251:1 undefined
+undefined
+arr.find( ele=>ele==91 );
+91
+arr.find( ele=>ele==100 );
+undefined
+arr.findIndex( ele=>ele==100 );
+-1
+arr.findIndex( ele=>ele==6 );
+3
+arr
+(8) [213, 14, 51, 6, 7, 23, 91, 60]
+arr.push(6);
+9
+arr
+(9) [213, 14, 51, 6, 7, 23, 91, 60, 6]
+arr.findIndex( ele=>ele==6 );
+3
+arr.lastIndexOf(6);
+8
+arr.filter( ele=>ele<50 );
+(5) [14, 6, 7, 23, 6]
+arr.filter( ele=>ele>50 );
+(4) [213, 51, 91, 60]
+arr.filter( ele=>ele==50 );
+[]
+arr.filter( ele=>ele==6 );
+(2) [6, 6]
+arr.filter( ele=>ele );
+(9) [213, 14, 51, 6, 7, 23, 91, 60, 6]
+arr.map( ele=>ele+10 );
+(9) [223, 24, 61, 16, 17, 33, 101, 70, 16]0: 2231: 242: 613: 164: 175: 336: 1017: 708: 16length: 9__proto__: Array(0)
+arr.push(100);
+10
+arr.unshift(100);
+11
+arr.pop();
+100
+arr.shift();
+100
+arr.includes(91);
+true
+arr.indexOf(6);
+3
+arr.lastIndexOf(6);
+8
+arr.sort();
+(9) [14, 213, 23, 51, 6, 6, 60, 7, 91]
+arr.sort( (a,b)=>a-b );
+(9) [6, 6, 7, 14, 23, 51, 60, 91, 213]
+arr.sort( (a,b)=>b-a );
+(9) [213, 91, 60, 51, 23, 14, 7, 6, 6]
+arr.reduce( (acc,curr)=>acc+=curr );
+471
+arr.reduce( (acc,curr)=>acc+=curr, acc=0 );
+471
+arr.reduce( (acc,curr)=>acc+=curr, acc=100 );
+571
+arr.slice(3,8);
+(5) [51, 23, 14, 7, 6]
+arr.splice(0,2,100,200,300);
+(2) [213, 91]
+arr
+(10) [100, 200, 300, 60, 51, 23, 14, 7, 6, 6]
+arr.reverse();
+(10) [6, 6, 7, 14, 23, 51, 60, 300, 200, 100]
+arr
+(10) [6, 6, 7, 14, 23, 51, 60, 300, 200, 100]
+//Closure
+function demo(a){
+    var b = 10;
+    console.log(a,b);
+}
+
+undefined
+demo(12);
+VM4927:4 12 10
+undefined
+function Outer(){
+    function inner(){
+        console.log('Inner Function');
+    }
+    
+}
+undefined
+function Outer(){
+    function inner(){
+        console.log('Inner Function');
+    }
+    
+    return inner;    
+}
+undefined
+temp = Outer();
+ƒ inner(){
+        console.log('Inner Function');
+    }
+temp
+ƒ inner(){
+        console.log('Inner Function');
+    }
+temp();
+VM5299:3 Inner Function
+undefined
+function Outer(){
+    function inner(){
+        console.log('Inner Function');
+    }
+
+    function inner1(){
+        console.log('Inner1 Function');
+    }
+    
+    return [inner, inner1];    
+}
+undefined
+temp = Outer();
+(2) [ƒ, ƒ]
+temp[0];
+ƒ inner(){
+        console.log('Inner Function');
+    }
+temp[1];
+ƒ inner1(){
+        console.log('Inner1 Function');
+    }
+temp[0]();
+VM5557:3 Inner Function
+undefined
+function Calc(){
+    function add(a,b){
+        console.log('SUM = ',a+b);
+    }
+
+    function subtract(){
+        console.log('Subtract = ',a-b);
+    }
+    
+    return [inner, inner1];    
+}
+undefined
+function Calc(){
+    function add(a,b){
+        console.log('SUM = ',a+b);
+    }
+
+    function subtract(){
+        console.log('Subtract = ',a-b);
+    }
+    
+    return [add, subtract];    
+}
+undefined
+temp = Calc();
+(2) [ƒ, ƒ]
+temp[0]
+ƒ add(a,b){
+        console.log('SUM = ',a+b);
+    }
+temp[1]
+ƒ subtract(){
+        console.log('Subtract = ',a-b);
+    }
+temp[0](12,10);
+VM5842:3 SUM =  22
+undefined
+temp[1](12,10);
+VM5842:7 Uncaught ReferenceError: a is not defined
+    at Array.subtract (<anonymous>:7:35)
+    at <anonymous>:1:8
+subtract @ VM5842:7
+(anonymous) @ VM5992:1
+function Calc(){
+    function add(a,b){
+        console.log('SUM = ',a+b);
+    }
+
+    function subtract(a,b){
+        console.log('Subtract = ',a-b);
+    }
+    
+    return [add, subtract];    
+}
+undefined
+temp = Calc();
+(2) [ƒ, ƒ]
+temp[1](12,10);
+VM6026:7 Subtract =  2
+undefined
+function Calc(a,b){
+    function add(){
+        console.log('SUM = ',a+b);
+    }
+
+    function subtract(){
+        console.log('Subtract = ',a-b);
+    }
+    
+    return [add, subtract];    
+}
+undefined
+temp = Calc(12,10);
+(2) [ƒ, ƒ]
+temp[0];
+ƒ add(){
+        console.log('SUM = ',a+b);
+    }
+temp[0]();
+VM6166:3 SUM =  22
+undefined
+temp[1]();
+VM6166:7 Subtract =  2
+undefined
+function Outer(x){
+
+    function inner(y){
+        console.log(x+y);
+    }
+    return inner;
+}
+undefined
+temp = Outer();
+ƒ inner(y){
+        console.log(x+y);
+    }
+temp(10);
+VM6772:4 NaN
+undefined
+temp = Outer(10);
+ƒ inner(y){
+        console.log(x+y);
+    }
+temp(2);
+VM6772:4 12
+undefined
+var unique = 123415;
+undefined
+function assignId(){
+    return unique;
+}
+undefined
+assignId();
+123415
+assignId();
+123415
+assignId();
+123415
+function assignId(){
+    return unique++;
+}
+undefined
+assignId();
+123415
+assignId();
+123416
+assignId();
+123417
+assignId();
+123418
+assignId();
+123419
+assignId();
+123420
+assignId();
+123421
+unique = 0;
+0
+assignId();
+0
+assignId();
+1
+assignId();
+2
+assignId();
+3
+function autoGenerator(){
+    var unique = 1230;
+
+    function assignId(){
+        return unique++;
+    }
+    
+}
+undefined
+function autoGenerator(){
+    var unique = 1230;
+
+    function assignId(){
+        return unique++;
+    }
+    
+    return assignId();
+}
+undefined
+temp = autoGenerator();
+1230
+function autoGenerator(){
+    var unique = 1230;
+
+    function assignId(){
+        return unique++;
+    }
+    
+    return assignId;
+}
+undefined
+temp = autoGenerator();
+ƒ assignId(){
+        return unique++;
+    }
+temp();
+1230
+temp();
+1231
+temp();
+1232
+temp();
+1233
+unique
+4
+unique
+4
+temp();
+1234
+temp();
+1235
+temp();
+1236
+temp();
+1237
+temp();
+1238
+temp();
+1239
+autoGenerator = 10;
+10
+typeof autoGenerator
+"number"
+temp();
+1240
+temp();
+1241
+temp();
+1242
+temp();
+1243
+temp();
+1244
+//IIFE(Immediate Invoke Function Expression)
+
+temp = (function(){
+    var unique = 1230;
+
+    function assignId(){
+        return unique++;
+    }
+
+    return assignId;
+})();
+
+ƒ assignId(){
+        return unique++;
+    }
+temp
+ƒ assignId(){
+        return unique++;
+    }
+temp();
+1230
+temp();
+1231
+temp();
+1232
+temp();
+1233
+temp();
+1234
+temp();
+1235
+temp();
+1236
