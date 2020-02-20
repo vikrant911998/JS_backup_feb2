@@ -1,0 +1,391 @@
+var str = 'Hello Computer';
+undefined
+str.length;
+14
+str.charAt(4);
+"o"
+str.charAt(24);
+""
+str.charAt(-1234);
+""
+str.charCodeAt(4);
+111
+str.concat(' FROM JS');
+"Hello Computer FROM JS"
+str
+"Hello Computer"
+str.includes('C');
+true
+str.includes('   ');
+false
+str.split('');
+(14) ["H", "e", "l", "l", "o", " ", "C", "o", "m", "p", "u", "t", "e", "r"]
+str.split(' ');
+(2) ["Hello", "Computer"]
+str.split('m');
+(2) ["Hello Co", "puter"]
+typeof str;
+"string"
+function demo(a,b){
+    console.log(a,b);
+}
+undefined
+demo(12,2);
+VM969:2 12 2
+undefined
+//3 Types
+//1.Declaration Style
+undefined
+//function_keyword function_name( function_arguments ){
+
+//}
+undefined
+function show(){
+    console.log('Inside Show Function');
+}
+undefined
+show();
+VM1377:2 Inside Show Function
+undefined
+//2.Anonymous Style or Function Expression Style
+undefined
+var show = function(){
+    console.log('Inside Show Function');
+}
+undefined
+show();
+VM1631:2 Inside Show Function
+undefined
+var show = function(){
+    console.log('Inside Show Function Anonoymous');
+}
+undefined
+show();
+VM1684:2 Inside Show Function Anonoymous
+undefined
+function add(a,b){
+    return a+b;
+}
+undefined
+add(2,3);
+5
+var add = function(a,b){
+    return a+b;
+}
+undefined
+add(2,3);
+5
+//Arrow Function
+var add = (a,b)=>console.log(a,b);
+undefined
+add(2,3);
+VM2251:2 2 3
+undefined
+//Arrow Function
+var add = (a,b)=>{
+    console.log(a,b);
+
+}
+undefined
+add(2,3);
+VM2312:3 2 3
+undefined
+//Arrow Function
+var add = (a,b)=>a+b;
+undefined
+add(2,3);
+5
+//Arrow Function
+var add = (a,b)=>{
+    console.log(a,b);
+    return a+b;
+}
+undefined
+add(2,3);
+VM2476:3 2 3
+5
+//function arguments
+undefined
+function demo(a,b){
+    console.log('Two Arguments ',a,b);
+}
+undefined
+demo(12,2);
+VM2883:2 Two Arguments  12 2
+undefined
+demo();
+VM2883:2 Two Arguments  undefined undefined
+undefined
+var temp1;
+undefined
+temp1
+undefined
+function demo(a,b){
+    console.log('Two Arguments ',a,b,arguments);
+}
+undefined
+demo(12,2);
+VM3152:2 Two Arguments  12 2 Arguments(2) [12, 2, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+undefined
+console.dir(demo);
+VM3247:1 ƒ demo(a,b)length: 2name: "demo"arguments: nullcaller: nullprototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM3152:1[[Scopes]]: Scopes[1]
+undefined
+function demo(){
+    console.log('Two Arguments ',arguments);
+}
+undefined
+function demo(){
+    console.log('Demo Arguments ',arguments);
+}
+undefined
+demo();
+VM3398:2 Demo Arguments  Arguments [callee: ƒ, Symbol(Symbol.iterator): ƒ]
+undefined
+demo(1);
+VM3398:2 Demo Arguments  Arguments [1, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+undefined
+demo(1,23,45,78,56);
+VM3398:2 Demo Arguments  Arguments(5) [1, 23, 45, 78, 56, callee: ƒ, Symbol(Symbol.iterator): ƒ]0: 11: 232: 453: 784: 56length: 5callee: ƒ demo()Symbol(Symbol.iterator): ƒ values()__proto__: Object
+undefined
+function demo(){
+    console.log('Demo Arguments ',arguments);
+    console.log(arguments instanceof Array );
+}
+undefined
+demo();
+VM3667:2 Demo Arguments  Arguments [callee: ƒ, Symbol(Symbol.iterator): ƒ]
+VM3667:3 false
+undefined
+function demo(){
+    console.log('Demo Arguments ',arguments);
+    
+    for(var item of arguments){
+        console.log(item);
+    }
+}
+undefined
+demo();
+VM3816:2 Demo Arguments  Arguments [callee: ƒ, Symbol(Symbol.iterator): ƒ]
+undefined
+demo(12,23);
+VM3816:2 Demo Arguments  Arguments(2) [12, 23, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+VM3816:5 12
+VM3816:5 23
+undefined
+function demo(){
+    var sum = 0;
+    
+    for(var item of arguments){
+         sum  = sum + item;   
+    }
+}
+undefined
+function demo(){
+    var sum = 0;
+    
+    for(var item of arguments){
+         sum  = sum + item;   
+    }
+    
+    return sum;
+}
+undefined
+demo(12,2);
+14
+demo(12,2,3,4,5);
+26
+parseInt("24");
+24
+parseInt("24dkjfg");
+24
+parseInt("dg24dkjfg");
+NaN
+function demo(){
+    var sum = 0;
+    
+    for(var item of arguments){
+         
+        if(typeof item == 'string'){
+            sum = sum + parseFloat(item);
+        }
+        else{
+            sum = sum + item;
+        } 
+    }
+    
+    return sum;
+}
+undefined
+demo(12,2,3,4,5);
+26
+demo(12,2,3,4,5,"24");
+50
+demo(12,2,3,4,5,"24.45");
+50.45
+demo(12,2,3,4,5.5,"24.45");
+50.95
+function demo(){
+    var sum = 0;
+    
+    for(var item of arguments){
+         
+        if(typeof item == 'string'){
+            sum = sum + parseFloat(item);
+        }
+        else if(typeof item == 'object'){
+            for(var temp of item){
+                sum = sum + temp;
+            }
+        }
+        else{
+            sum = sum + item;
+        } 
+    }
+    
+    return sum;
+}
+undefined
+demo(12,2,3,4,5.5,"24.45",[5]);
+55.95
+demo(12,2,3,4,5.5,"24.45",[5,4,3]);
+62.95
+function demo1(a){
+        console.log(a instanceof Array);
+    }
+undefined
+demo1([]);
+VM5264:2 true
+undefined
+//function definition inside another function
+undefined
+function Higher(){
+    function inner1(){
+        console.log('Inside Inner1 Function');
+    }
+}
+undefined
+Higher();
+undefined
+demo = 12;
+12
+function Higher(){
+    function inner1(){
+        console.log('Inside Inner1 Function');
+    }
+
+    return inner1;
+}
+undefined
+temp1 = Higher();
+ƒ inner1(){
+        console.log('Inside Inner1 Function');
+    }
+temp1
+ƒ inner1(){
+        console.log('Inside Inner1 Function');
+    }
+function Higher(){
+    function inner1(){
+        console.log('Inside Inner1 Function');
+    }
+    function inner1(){
+        console.log('Inside Inner1 Function');
+    }
+    function inner1(){
+        console.log('Inside Inner1 Function');
+    }
+    function inner1(){
+        console.log('Inside Inner1 Function');
+    }
+    return inner1;
+}
+undefined
+function Higher(){
+    function inner1(){
+        console.log('Inside Inner1 Function');
+    }
+    function inner2(){
+        console.log('Inside Inner2 Function');
+    }
+    function inner3(){
+        console.log('Inside Inner3 Function');
+    }
+    function inner4(){
+        console.log('Inside Inner4 Function');
+    }
+
+    return [inner1,inner2,inner3,inner4];
+}
+undefined
+temp1 = Higher();
+(4) [ƒ, ƒ, ƒ, ƒ]0: ƒ inner1()1: ƒ inner2()2: ƒ inner3()3: ƒ inner4()length: 4__proto__: Array(0)
+temp1[0];
+ƒ inner1(){
+        console.log('Inside Inner1 Function');
+    }
+temp1[0]();
+VM6116:3 Inside Inner1 Function
+undefined
+temp1[2];
+ƒ inner3(){
+        console.log('Inside Inner3 Function');
+    }
+temp1[3];
+ƒ inner4(){
+        console.log('Inside Inner4 Function');
+    }
+temp1[1];
+ƒ inner2(){
+        console.log('Inside Inner2 Function');
+    }
+temp1[1]();
+VM6116:6 Inside Inner2 Function
+undefined
+arr = [23,46,67,true];
+(4) [23, 46, 67, true]
+//addition of value in array
+arr.push(100);
+5
+//addition of value in array
+arr.push(200,300);
+7
+arr
+(7) [23, 46, 67, true, 100, 200, 300]
+arr.unshift(100);
+8
+arr.unshift(200,300);
+10
+arr
+(10) [200, 300, 100, 23, 46, 67, true, 100, 200, 300]
+arr.pop();
+300
+arr.shift();
+200
+arr
+(8) [300, 100, 23, 46, 67, true, 100, 200]0: 3001: 1002: 233: 464: 675: true6: 1007: 200length: 8__proto__: Array(0)
+arr.slice();
+(8) [300, 100, 23, 46, 67, true, 100, 200]
+arr.slice(3);
+(5) [46, 67, true, 100, 200]
+arr
+(8) [300, 100, 23, 46, 67, true, 100, 200]
+arr.slice(3,6);
+(3) [46, 67, true]
+arr.splice(2,1,3400,56);
+[23]
+arr
+(9) [300, 100, 3400, 56, 46, 67, true, 100, 200]
+arr.length
+9
+arr.includes(100,4);
+true
+arr.includes(300,4);
+false
+arr.includes(300,0);
+true
+str
+"Hello Computer"
+str.replace('llo','y');
+"Hey Computer"
+str.slice(1,7);
+"ello C"
