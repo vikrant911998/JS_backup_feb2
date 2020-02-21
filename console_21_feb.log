@@ -1,0 +1,310 @@
+var a = 123;
+undefined
+typeof(a);
+"number"
+typeof a;
+"number"
+typeof a
+"number"
+a = 'Hello';
+"Hello"
+typeof a
+"string"
+a = true
+true
+typeof a
+"boolean"
+//number,string,boolean
+undefined
+//number,string,boolean ->lowercase
+undefined
+12 +12;
+24
+12 +"12";
+"1212"
+12 +parseInt("12");
+24
+12 +parseInt("12sklf");
+24
+12 +parseInt("kl12sklf");
+NaN
+//NaN,undefined,null
+undefined
+12+undefined
+NaN
+12 +parseFloat("12.45");
+24.45
+arr= [123,435,4,12];
+(4) [123, 435, 4, 12]0: 1231: 4352: 43: 12length: 4__proto__: Array(0)length: 0constructor: ƒ Array()concat: ƒ concat()copyWithin: ƒ copyWithin()fill: ƒ fill()find: ƒ find()findIndex: ƒ findIndex()lastIndexOf: ƒ lastIndexOf()pop: ƒ pop()push: ƒ push()reverse: ƒ reverse()shift: ƒ shift()unshift: ƒ unshift()slice: ƒ slice()sort: ƒ sort()splice: ƒ splice()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()entries: ƒ entries()values: ƒ values()forEach: ƒ forEach()filter: ƒ filter()flat: ƒ flat()flatMap: ƒ flatMap()map: ƒ map()every: ƒ every()some: ƒ some()reduce: ƒ reduce()reduceRight: ƒ reduceRight()toLocaleString: ƒ toLocaleString()toString: ƒ toString()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {copyWithin: true, entries: true, fill: true, find: true, findIndex: true, …}__proto__: Object
+typeof arr;
+"object"
+obj = {
+    name:'Vikrant',
+    age:23,
+    address:'rohini'
+};
+{name: "Vikrant", age: 23, address: "rohini"}name: "Vikrant"age: 23address: "rohini"__proto__: Object
+typeof obj;
+"object"
+obj.name;
+"Vikrant"
+obj['name'];
+"Vikrant"
+obj['age'];
+23
+//for-in loop
+for( var item in obj){
+    console.log(item)    ;
+}
+
+VM1914:3 name
+VM1914:3 age
+VM1914:3 address
+undefined
+//for-in loop
+for( var item in obj){
+    console.log(item, obj.item);
+}
+
+VM1971:3 name undefined
+VM1971:3 age undefined
+VM1971:3 address undefined
+undefined
+//for-in loop
+for( var item in obj){
+    console.log(item, obj['item']);
+}
+
+VM2021:3 name undefined
+VM2021:3 age undefined
+VM2021:3 address undefined
+undefined
+//for-in loop
+for( var item in obj){
+    console.log(item, obj[item]);
+}
+
+VM2043:3 name Vikrant
+VM2043:3 age 23
+VM2043:3 address rohini
+undefined
+//function definition inside another function
+undefined
+function Outer(){
+    function inner1(){
+        console.log('Inner One Function');
+    }
+    function inner2(){
+        console.log('Inner Two Function');
+    }
+    
+    return [inner1,inner2];
+}
+undefined
+temp = Outer();
+(2) [ƒ, ƒ]0: ƒ inner1()1: ƒ inner2()length: 2__proto__: Array(0)
+temp[0];
+ƒ inner1(){
+        console.log('Inner One Function');
+    }
+function Outer(){
+    function inner1(){
+        console.log('Inner One Function');
+    }
+    function inner2(){
+        console.log('Inner Two Function');
+    }
+    
+    return {show1:inner1,show2:inner2};
+}
+undefined
+temp = Outer();
+{show1: ƒ, show2: ƒ}show1: ƒ inner1()show2: ƒ inner2()__proto__: Object
+function Calc(){
+    function addition(){
+        console.log('Inside addition');
+    }
+    function subtract(){
+        console.log('Inside Subtract');
+    }
+
+    return {addition,subtract};
+}
+undefined
+temp = Calc();
+{addition: ƒ, subtract: ƒ}addition: ƒ addition()subtract: ƒ subtract()__proto__: Object
+temp.addition();
+VM2938:3 Inside addition
+undefined
+//function types, function arguments, nested function definition
+undefined
+//function passing as an argument.
+undefined
+function print(a){ //12
+    console.log('Print Function Called Here .. ',a); //12
+}
+
+function demo(num,_function){
+    console.log('Inside Demo FUnction');
+    _function(num); //print(num)->print(12)
+}
+
+demo(12,print);
+//Inside Demo Function
+//Print Function Called Here...  12
+VM4329:6 Inside Demo FUnction
+VM4329:2 Print Function Called Here ..  12
+undefined
+function print(a){ //12
+    console.log('Print Function Called Here .. ',a); 
+}
+
+function demo(num,_function){ //12,print
+    console.log('Inside Demo FUnction');
+    _function(num); //print(12)
+}
+
+function wrapper(num,function1,function2){ //12,print,demo
+    
+    function2(num,function1); //demo(12,print)
+}
+wrapper(12,print,demo);
+VM4795:6 Inside Demo FUnction
+VM4795:2 Print Function Called Here ..  12
+undefined
+arr = [300,4000,23,46,67,true,100,200];
+(8) [300, 4000, 23, 46, 67, true, 100, 200]
+arr = [300,4000,23,46,67,100,200];
+(7) [300, 4000, 23, 46, 67, 100, 200]
+function display(num){
+    console.log(num);
+}
+
+arr.forEach();
+VM5142:5 Uncaught TypeError: undefined is not a function
+    at Array.forEach (<anonymous>)
+    at <anonymous>:5:5
+(anonymous) @ VM5142:5
+function display(num){ //300,4000,23,46,67
+    console.log(num);
+}
+
+arr.forEach(display);
+VM5295:2 300
+VM5295:2 4000
+VM5295:2 23
+VM5295:2 46
+VM5295:2 67
+VM5295:2 100
+VM5295:2 200
+undefined
+arr.forEach(function(element){
+    console.log(element);
+});
+VM5544:2 300
+VM5544:2 4000
+VM5544:2 23
+VM5544:2 46
+VM5544:2 67
+VM5544:2 100
+VM5544:2 200
+undefined
+arr.forEach((element)=>{
+    console.log(element);
+});
+VM5596:2 300
+VM5596:2 4000
+VM5596:2 23
+VM5596:2 46
+VM5596:2 67
+VM5596:2 100
+VM5596:2 200
+undefined
+arr.forEach( element=>console.log(element));
+VM5780:1 300
+VM5780:1 4000
+VM5780:1 23
+VM5780:1 46
+VM5780:1 67
+VM5780:1 100
+VM5780:1 200
+undefined
+arr.find( element=>{
+     return element == 100;   
+});
+100
+arr.find( element=>{
+     return element == 101;   
+});
+undefined
+arr.find( item=>item==101 );
+undefined
+arr.find( item=>item==100 );
+100
+arr.findIndex( item=>item==100 );
+5
+arr
+(7) [300, 4000, 23, 46, 67, 100, 200]
+arr.push(100);
+8
+arr
+(8) [300, 4000, 23, 46, 67, 100, 200, 100]
+arr.findIndex( item=>item==100 );
+5
+arr.lastIndexOf(100);
+7
+arr.filter( item=>item<100 );
+(3) [23, 46, 67]
+arr.map( item=>item+5 );
+(8) [305, 4005, 28, 51, 72, 105, 205, 105]
+arr.map( item=>item-5 );
+(8) [295, 3995, 18, 41, 62, 95, 195, 95]
+arr
+(8) [300, 4000, 23, 46, 67, 100, 200, 100]
+arr.map( item=>{
+    return item-5 
+});
+(8) [295, 3995, 18, 41, 62, 95, 195, 95]
+arr.sort( (a,b)=>a-b );
+(8) [23, 46, 67, 100, 100, 200, 300, 4000]0: 231: 462: 673: 1004: 1005: 2006: 3007: 4000length: 8__proto__: Array(0)
+arr
+(8) [23, 46, 67, 100, 100, 200, 300, 4000]
+arr.sort( (a,b)=>b-a );
+(8) [4000, 300, 200, 100, 100, 67, 46, 23]
+arr.reduce( (acc,current)=>acc);
+4000
+arr
+(8) [4000, 300, 200, 100, 100, 67, 46, 23]
+arr.reduce( (acc,current)=>acc+=current);
+4836
+arr.reduce( (acc,current)=>acc+=current,1000);
+5836
+arr.reduce( (acc,current)=>console.log(acc,current));
+VM7918:1 4000 300
+VM7918:1 undefined 200
+VM7918:1 undefined 100
+VM7918:1 undefined 100
+VM7918:1 undefined 67
+VM7918:1 undefined 46
+VM7918:1 undefined 23
+undefined
+arr.reduce( (acc,current)=>{
+    acc +=current
+    console.log(acc,current)
+
+});
+VM8022:3 4300 300
+VM8022:3 NaN 200
+VM8022:3 NaN 100
+VM8022:3 NaN 100
+VM8022:3 NaN 67
+VM8022:3 NaN 46
+VM8022:3 NaN 23
+undefined
+arr.reduce( (acc,current)=>acc+=current);
+4836
+var template1;
+undefined
+console.log(template1);
+VM9477:1 undefined
+undefined
