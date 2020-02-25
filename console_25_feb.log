@@ -1,0 +1,330 @@
+var str = 'Hello Computer';
+undefined
+str.length
+14
+for(var i=0;i<str.length;i++){
+    console.log(str[i]);
+}
+VM316:2 H
+VM316:2 e
+VM316:2 l
+VM316:2 l
+VM316:2 o
+VM316:2  
+VM316:2 C
+VM316:2 o
+VM316:2 m
+VM316:2 p
+VM316:2 u
+VM316:2 t
+VM316:2 e
+VM316:2 r
+undefined
+//for-of loop
+for( var item of str ){
+    console.log(item);
+}
+VM467:3 H
+VM467:3 e
+VM467:3 l
+VM467:3 l
+VM467:3 o
+VM467:3  
+VM467:3 C
+VM467:3 o
+VM467:3 m
+VM467:3 p
+VM467:3 u
+VM467:3 t
+VM467:3 e
+VM467:3 r
+undefined
+str.bold
+ƒ bold() { [native code] }
+str.bold();
+"<b>Hello Computer</b>"
+str.big();
+"<big>Hello Computer</big>"
+str.anchor();
+"<a name="undefined">Hello Computer</a>"
+str.charAt();
+"H"
+str.charAt(3);
+"l"
+str.charAt(45);
+""
+str.charCodeAt();
+72
+'#'.charCodeAt();
+35
+str.charCodeAt(2);
+108
+str
+"Hello Computer"
+//hoisting
+console.log(temp5);
+
+var temp5 = 10;
+
+VM1394:2 undefined
+undefined
+//hoisting
+console.log(temp6);
+
+temp6 = 10;
+
+VM1428:2 Uncaught ReferenceError: temp6 is not defined
+    at <anonymous>:2:13
+(anonymous) @ VM1428:2
+//hoisting
+console.log(temp5);
+
+var temp5 = 10;
+
+VM1454:2 10
+undefined
+//hoisting
+console.log(temp7);
+
+var temp7 = 10;
+
+VM1490:2 undefined
+undefined
+temp7
+10
+var temp7;
+console.log(temp7);
+
+temp7 = 10;
+VM1682:2 10
+10
+print5();
+
+function print5(){
+    console.log('Print 5 Function Called');
+}
+VM2051:4 Print 5 Function Called
+undefined
+print6();
+
+var print6 = function (){
+    console.log('Print 5 Function Called');
+}
+VM2097:1 Uncaught TypeError: print6 is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM2097:1
+print6();
+
+print6 = function (){
+    console.log('Print 5 Function Called');
+}
+VM2126:1 Uncaught TypeError: print6 is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM2126:1
+var print6;
+
+print6 = function (){
+    console.log('Print 5 Function Called');
+}
+print6();
+VM2159:4 Print 5 Function Called
+undefined
+temp7 = 45;
+var temp7;
+
+console.log(temp7);
+VM2397:4 45
+undefined
+console.log(t10);
+console.log(t11);
+
+var t10 = 34;
+let t11 = 45;
+VM2859:1 undefined
+VM2859:2 Uncaught ReferenceError: t11 is not defined
+    at <anonymous>:2:13
+(anonymous) @ VM2859:2
+function Calc(){
+    function add(a,b){
+        console.log(a+b);
+    }
+    
+    function sub(a,b){
+        console.log(a-b);
+    }
+
+    return {add,sub};
+}
+undefined
+temp = Calc();
+{add: ƒ, sub: ƒ}
+function demo(){
+    let a = 10;
+    console.log(a);
+}
+undefined
+temp.add(2,3);
+VM3133:3 5
+undefined
+function Calc(a,b){
+    function add(){
+        console.log(a+b);
+    }
+    
+    function sub(){
+        console.log(a-b);
+    }
+
+    return {add,sub};
+}
+undefined
+temp = Calc();
+{add: ƒ, sub: ƒ}
+temp = Calc(2,3);
+{add: ƒ, sub: ƒ}
+temp.add();
+VM3600:3 5
+undefined
+temp.sub();
+VM3600:7 -1
+undefined
+function Outer(){
+    let a = 10;
+
+    function inner(){
+        console.log(a*5);
+    }
+    return inner;
+}
+undefined
+temp = Outer();
+ƒ inner(){
+        console.log(a*5);
+    }
+temp();
+VM4331:5 50
+undefined
+function outer(x){
+    function inner(y){
+        console.log(x+y);
+    }
+    return inner;
+}
+
+temp = outer(45);
+ƒ inner(y){
+        console.log(x+y);
+    }
+temp(10);
+VM4930:3 55
+undefined
+//IIFE
+outer = 10;
+10
+//IIFE->Immediate Invoke Function Expression
+(function(){
+    console.log('IIFE Function');
+})();
+VM6983:3 IIFE Function
+undefined
+(function (x){
+    function inner(y){
+        console.log(x+y);
+    }
+    return inner;
+})();
+ƒ inner(y){
+        console.log(x+y);
+    }
+var counter = 1;
+function increase(){
+    console.log(counter);
+    counter++;
+}
+undefined
+increase();
+VM7339:3 1
+undefined
+increase();
+VM7339:3 2
+undefined
+increase();
+VM7339:3 3
+undefined
+increase();
+VM7339:3 4
+undefined
+counter = -3456;
+-3456
+increase();
+VM7339:3 -3456
+undefined
+increase();
+VM7339:3 -3455
+undefined
+increase();
+VM7339:3 -3454
+undefined
+function count(){
+    let counter = 1;
+
+    function increase(){
+        console.log(counter);
+        counter++;
+    }
+    return increase;
+}
+undefined
+temp = count();
+ƒ increase(){
+        console.log(counter);
+        counter++;
+    }
+temp();
+VM7662:5 1
+undefined
+temp();
+VM7662:5 2
+undefined
+temp();
+VM7662:5 3
+undefined
+temp();
+VM7662:5 4
+undefined
+temp();
+VM7662:5 5
+undefined
+temp();
+VM7662:5 6
+undefined
+count = 10;
+10
+temp = (function(){
+    let counter = 1;
+
+    function increase(){
+        console.log(counter);
+        counter++;
+    }
+    return increase;
+})();
+ƒ increase(){
+        console.log(counter);
+        counter++;
+    }
+temp();
+VM7912:5 1
+undefined
+temp();
+VM7912:5 2
+undefined
+temp();
+VM7912:5 3
+undefined
+temp();
+VM7912:5 4
+undefined
+temp();
+VM7912:5 5
+undefined
