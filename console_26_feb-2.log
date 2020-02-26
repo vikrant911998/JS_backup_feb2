@@ -1,0 +1,309 @@
+//Variables declaration and keywords , datatypes and it's methods
+undefined
+var a = 10;
+undefined
+var b;
+undefined
+a
+10
+b
+undefined
+undefined
+undefined
+null
+null
+NaN
+NaN
+typeof(a);
+"number"
+//number,string,boolean
+undefined
+typeof a;
+"number"
+typeof a
+"number"
+typeof b
+"undefined"
+typeof null
+"object"
+typeof NaN
+"number"
+b = true;
+true
+typeof b
+"boolean"
+typeof b;
+"boolean"
+var c = 'Hello';
+undefined
+typeof c;
+"string"
+a = c;
+"Hello"
+a = "Hello";
+"Hello"
+typeof a;
+"string"
+a = 10;
+10
+b =23;
+23
+a+b;
+33
+a+b+34;
+67
+a+b+"34";
+"3334"
+a
+10
+a.toString();
+"10"
+parseInt("10")
+10
+parseInt(a);
+10
+a = "33";
+"33"
+parseInt(a);
+33
+a = "33.4564";
+"33.4564"
+parseInt(a);
+33
+parseFloat(a);
+33.4564
+true
+true
+false
+false
+true+true;
+2
+true+true-false;
+2
+true-true == false;
+true
+34+true;
+35
+NaN == null;
+false
+undefined = null;
+null
+undefined == null;
+true
+undefined == NaN;
+false
+NaN == false;
+false
+a = 10;
+10
+typeof a;
+"number"
+typeof typeof a;
+"string"
+a = "Hello Computer";
+"Hello Computer"
+typeof a;
+"string"
+for(var i=0;i<a.length ; i++){
+    console.log(a[i]);
+}
+VM2375:2 H
+VM2375:2 e
+VM2375:2 l
+VM2375:2 l
+VM2375:2 o
+VM2375:2  
+VM2375:2 C
+VM2375:2 o
+VM2375:2 m
+VM2375:2 p
+VM2375:2 u
+VM2375:2 t
+VM2375:2 e
+VM2375:2 r
+undefined
+//for -of Loop
+undefined
+for( var item of a ){
+    console.log(item);
+}
+VM2540:2 H
+VM2540:2 e
+VM2540:2 l
+VM2540:2 l
+VM2540:2 o
+VM2540:2  
+VM2540:2 C
+VM2540:2 o
+VM2540:2 m
+VM2540:2 p
+VM2540:2 u
+VM2540:2 t
+VM2540:2 e
+VM2540:2 r
+undefined
+a
+"Hello Computer"
+a.length
+14
+a[1];
+"e"
+typeof a[1];
+"string"
+a.anchor();
+"<a name="undefined">Hello Computer</a>"
+a.bold();
+"<b>Hello Computer</b>"
+a.blink();
+"<blink>Hello Computer</blink>"
+a.charAt();
+"H"
+a.charAt(4);
+"o"
+a.charAt(45);
+""
+a.charCodeAt();
+72
+a.charCodeAt(4);
+111
+'#'.charCodeAt();
+35
+'A'.charCodeAt();
+65
+a.concat(' From JS');
+"Hello Computer From JS"
+a
+"Hello Computer"
+temp = a.concat(' From JS');
+"Hello Computer From JS"
+temp
+"Hello Computer From JS"
+a.indexOf('');
+0
+a.indexOf(' ');
+5
+a.indexOf(' ',6);
+-1
+a.lastIndexOf('e');
+12
+a
+"Hello Computer"
+a
+"Hello Computer"
+a.indexOf('e');
+1
+a.includes('C');
+true
+a.includes('Comp');
+true
+a.includes('Comp',7);
+false
+a.includes('omp',7);
+true
+a.localeCompare(a);
+0
+a.localeCompare(A);
+VM4221:1 Uncaught ReferenceError: A is not defined
+    at <anonymous>:1:17
+(anonymous) @ VM4221:1
+a.localeCompare("Hello");
+1
+a
+"Hello Computer"
+' '.charCodeAt();
+32
+'a '.charCodeAt("Zero");
+97
+'a '.charCodeAt();
+97
+a.localeCompare("Zero");
+-1
+a
+"Hello Computer"
+a.replace('ll','$');
+"He$o Computer"
+a.slice(3);
+"lo Computer"
+a.slice(3,9);
+"lo Com"
+a.slice(3,9);
+"lo Com"
+a.split('e');
+(3) ["H", "llo Comput", "r"]
+a.split(' ');
+(2) ["Hello", "Computer"]
+temp = a.split(' ');
+(2) ["Hello", "Computer"]
+temp
+(2) ["Hello", "Computer"]
+a.substr(3);
+"lo Computer"
+a.substr(3,3);
+"lo "
+a.substring(3,8);
+"lo Co"
+a
+"Hello Computer"
+a.toLowerCase();
+"hello computer"
+a.toUpperCase();
+"HELLO COMPUTER"
+a = "   Hello Computer     ";
+"   Hello Computer     "
+a.trim();
+"Hello Computer"
+a.trimEnd();
+"   Hello Computer"
+a.trimRight();
+"   Hello Computer"
+a.trimStart();
+"Hello Computer     "
+a.trimLeft();
+"Hello Computer     "
+arr = [];
+[]
+arr = [123,25,45,61,170,97];
+(6) [123, 25, 45, 61, 170, 97]
+'Hello';
+"Hello"
+"Hello";
+"Hello"
+b
+23
+console.log('Value = ',b);
+VM6482:1 Value =  23
+undefined
+console.log('Value = '+b);
+VM6507:1 Value = 23
+undefined
+console.log(`Value = ${b}`);
+VM6629:1 Value = 23
+undefined
+`kjfsgd
+dfklgjksdlk
+dklfjg`;
+"kjfsgd
+dfklgjksdlk
+dklfjg"
+var arr = [23,34534,1934,02030,true,'Hello'];
+undefined
+arr.push(100);
+7
+arr
+(7) [23, 34534, 1934, 1048, true, "Hello", 100]
+arr.unshift(200);
+8
+arr
+(8) [200, 23, 34534, 1934, 1048, true, "Hello", 100]
+arr.push(200,900,1800) ;
+11
+arr
+(11) [200, 23, 34534, 1934, 1048, true, "Hello", 100, 200, 900, 1800]
+arr.unshift(200,100,300,500);
+15
+arr
+(15) [200, 100, 300, 500, 200, 23, 34534, 1934, 1048, true, "Hello", 100, 200, 900, 1800]
+arr.shift();
+200
+arr.pop();
+1800
