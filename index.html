@@ -1,0 +1,44 @@
+<!-- DOM -> Document Object Model -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .green {
+        color: green;
+        background-color: yellow;
+        font-size: 25px;
+      }
+
+      .blue {
+        border: 5px solid blue;
+      }
+    </style>
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <h1>Hello DOM</h1>
+    <div></div>
+
+    <!-- <script src="./index.js"></script> -->
+    <!-- <script>
+      let h1 = document.getElementsByTagName("h1")[0];
+      console.log(h1);
+      h1.style.backgroundColor = "yellow";
+      let button = document.createElement("button");
+      button.innerText = "Dynamic";
+      //   button.style.backgroundColor = "darkblue";
+      //   button.style.color = "aqua";
+      //   button.style.border = "none";
+      button.className = "green blue";
+      //   button.className = "blue"; ->Over write
+      //   button.classList.add("blue");
+      button.classList.remove("blue");
+      let div = document.getElementsByTagName("div")[0];
+      div.appendChild(button);
+    </script> -->
+  </body>
+</html>

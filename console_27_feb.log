@@ -1,0 +1,115 @@
+function Student(id,name){
+    this.id = id;
+    this.name = name;
+}
+undefined
+Student.prototype.display = function(){
+    console.log(this.id,this.name);
+}
+ƒ (){
+    console.log(this.id,this.name);
+}
+obj = new Student(101,name);
+Student {id: 101, name: ""}
+obj = new Student(101,"Vikrant");
+Student {id: 101, name: "Vikrant"}
+obj.display();
+VM523:2 101 "Vikrant"
+undefined
+class Employee{
+    constructor(id,name){
+        this.id = id;
+        this.name = name;
+    }
+
+    display(){
+        console.log('Id = ',this.id);
+        console.log('Name = ',this.name);
+    }  
+    
+}
+undefined
+obj = new Employee(101,"Vikrant");
+Employee {id: 101, name: "Vikrant"}id: 101name: "Vikrant"__proto__: Object
+obj.display();
+VM1147:8 Id =  101
+VM1147:9 Name =  Vikrant
+undefined
+class Account{
+    constructor(id,name){
+        this.id = id;
+    }
+    
+}
+undefined
+class Account{
+    constructor(id,name){
+        this.id = id;
+        this.name = name;
+    }
+    
+    show(){
+        console.log(this.id,this.name);
+    }
+}
+
+undefined
+class SavingAccount extends Account{
+    constructor(type){
+        this.type = type;
+    }
+
+    show1(){
+        console.log(this.type);
+    }
+
+}
+undefined
+class SavingAccount1 extends Account{
+    constructor(id,name,type){
+        super(id,name);
+        this.type = type;
+    }
+
+    show1(){
+        console.log(this.type);
+    }
+
+}
+undefined
+obj = new SavingAccount1(101,"Vikrant","Saving");
+SavingAccount1 {id: 101, name: "Vikrant", type: "Saving"}id: 101name: "Vikrant"type: "Saving"__proto__: Account
+obj1 = new SavingAccount("Saving");
+VM2580:3 Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+    at new SavingAccount (<anonymous>:3:9)
+    at <anonymous>:1:8
+SavingAccount @ VM2580:3
+(anonymous) @ VM3087:1
+class SavingAccount2 extends Account{
+    constructor(){
+    }
+
+    show1(){
+        console.log(this.type);
+    }
+
+}
+undefined
+obj1 = new SavingAccount2();
+VM3236:2 Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+    at new SavingAccount2 (<anonymous>:2:16)
+    at <anonymous>:1:8
+SavingAccount2 @ VM3236:2
+(anonymous) @ VM3262:1
+obj1
+VM3297:1 Uncaught ReferenceError: obj1 is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM3297:1
+Document
+ƒ Document() { [native code] }
+Document instanceof Window
+false
+Document instanceof Object;
+true
+document
+#document<html>​<head>​</head>​<body>​</body>​</html>​
